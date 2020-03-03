@@ -2,10 +2,22 @@
   "name": "promises",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/find.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "tsc -p tsconfig.json",
+    "watch": "tscf -p tsconfig.json --preserveConsoleOutput --pretty --watch",
+    "test": "nodemon test/basic.test.js",
+    "dev": "npm_config_loglevel=silent concurrently \"npm run watch\" \"npm run test\""
   },
   "author": "kjhx (http://git.huggins.io/)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^13.7.7",
+    "tsc-fancy": "^1.1.2",
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.2"
+  }
 }
